@@ -1,0 +1,18 @@
+.filter__label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  margin: 0 auto 25px;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.filter__input {
+  border-radius: 7px;
+  border: 1px solid #796581fc;
+  width: 200px;
+  padding: 3px 20px 3px 20px;
+  margin-top: 10px;
+}
