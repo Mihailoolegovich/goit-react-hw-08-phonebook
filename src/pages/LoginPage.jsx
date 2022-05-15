@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../redux/auth/authOperations';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +9,12 @@ export default function LoginPage() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    const passInput = document.getElementById('loginPass');
+    checked ? (passInput.type = 'text') : (passInput.type = 'password');
+  }, [checked]);
 
   function handleChange(e) {
     const { name, value } = e.currentTarget;
@@ -30,12 +36,13 @@ export default function LoginPage() {
     // setEmail('');
     // setPassword('');
   }
-  function myFunction() {
-    const passInput = document.getElementById('loginPass');
-    passInput.type === 'password'
-      ? (passInput.type = 'text')
-      : (passInput.type = 'password');
-  }
+
+  // function myFunction() {
+  //   const passInput = document.getElementById('loginPass');
+  //   passInput.type === 'password'
+  //     ? (passInput.type = 'text')
+  //     : (passInput.type = 'password');
+  // }
   return (
     <>
       <form className="container--form" onSubmit={handleSubmit}>
@@ -69,14 +76,21 @@ export default function LoginPage() {
             required
           />
         </label>
-        <label className=" form__label--checkbox">
-          <input
-            style={{ margin: '10px' }}
-            type="checkbox"
-            onClick={() => myFunction()}
-          />
-          Show Password
-        </label>
+        {/* <input type="checkbox" id="option">
+
+<label for="option">Select this option</label> */}
+        <div className=" form__label--checkbox">
+          <label>
+            <input
+              style={{ margin: '10px' }}
+              type="checkbox"
+              // onClick={() => myFunction()}
+              checked={checked}
+              onChange={e => setChecked(e.target.checked)}
+            />
+          </label>
+          <p> Show Password</p>
+        </div>
         <button
           className="form__btn "
           //   disabled={isAdding}

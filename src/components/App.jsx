@@ -25,7 +25,10 @@ export default function App() {
               <Route path="login" element={<LoginPage />} />
             </>
           )}
-          <Route path="*" element={<HomePage />} />
+          <Route
+            path="*"
+            element={isLoggedIn ? <ContactsPage /> : <HomePage />}
+          />
         </Route>
       </Routes>
     </>
