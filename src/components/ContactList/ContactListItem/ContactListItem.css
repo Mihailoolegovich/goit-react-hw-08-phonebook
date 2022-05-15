@@ -1,13 +1,10 @@
 .contacts__li {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-}
-
-.contacts__data {
-  margin-right: 50px;
-  width: 250px;
+  margin: 0 auto 15px;
+  min-width: 465px;
+  max-width: 500px;
 }
 
 .contacts__name {

@@ -1,10 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { useGetContactsQuery } from 'redux/contacts/contactsApi';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import ContactListItem from './ContactListItem/ContactListItem';
 
+import { getContacts } from 'redux/contacts/contactsOperations';
 export default function ContactList() {
-  const { data, error, isLoading, isSuccess } = useGetContactsQuery();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getContacts());
+  }, [dispatch]);
+
+  const data = useSelector(state => state.contacts);
   const filterName = useSelector(state => state.filter);
 
   const filterList =
@@ -13,9 +19,7 @@ export default function ContactList() {
 
   return (
     <ul>
-      {isLoading && <h2 style={{ textAlign: 'center' }}>Loading ...</h2>}
-      {error && <h2 style={{ textAlign: 'center' }}>{error.data}</h2>}
-      {isSuccess &&
+      {filterList &&
         filterList.map(list => <ContactListItem key={list.id} data={list} />)}
     </ul>
   );

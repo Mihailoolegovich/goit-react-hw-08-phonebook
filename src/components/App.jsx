@@ -1,22 +1,33 @@
-import React from 'react';
-import Section from './Section';
-import ContactForm from './ContactForm';
-import Filter from './Filter';
-import ContactList from './ContactList';
-import { ToastContainer } from 'react-toastify';
+import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import AppBar from './AppBar/AppBar';
+import { HomePage, ContactsPage, RegisterPage, LoginPage } from 'pages';
+import { fetchCurrentUser } from 'redux/auth/authOperations';
 
 export default function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
+
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   return (
     <>
-      <Section title="Phonebook">
-        <ContactForm />
-      </Section>
-
-      <Section title="Contacts">
-        <Filter />
-        <ContactList />
-      </Section>
-      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<AppBar />}>
+          <Route index element={<HomePage />} />
+          {isLoggedIn ? (
+            <Route path="contacts" element={<ContactsPage />} />
+          ) : (
+            <>
+              <Route path="register" element={<RegisterPage />} />
+              <Route path="login" element={<LoginPage />} />
+            </>
+          )}
+          <Route path="*" element={<HomePage />} />
+        </Route>
+      </Routes>
     </>
   );
 }

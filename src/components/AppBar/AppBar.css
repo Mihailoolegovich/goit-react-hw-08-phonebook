@@ -1,0 +1,27 @@
+.container_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border-bottom: 2px solid rgb(34, 162, 195);
+  padding: 30px 60px;
+  margin-bottom: 25px;
+  background: rgb(34, 162, 195);
+  background: radial-gradient(
+    circle,
+    rgba(34, 162, 195, 0.5718662464985995) 0%,
+    rgba(45, 203, 253, 0.5438550420168067) 100%
+  );
+}
+
+.link {
+  margin: 10px;
+}
+
+/* .link:active{
+      color: red;
+  } */
+
+.activeLink {
+  margin: 10px;
+  color: red;
+}

@@ -7,6 +7,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(174, 238, 217);
+  background: radial-gradient(
+    circle,
+    rgba(174, 238, 217, 0.7203256302521008) 0%,
+    rgba(148, 211, 233, 1) 100%
+  );
 }
 
 code {
@@ -16,12 +22,14 @@ code {
 
 h2,
 li,
-ul {
+ul,
+p {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 #root {
-  margin: 50px;
+  /* margin: 0 50px; */
+  /* padding: 0 50px; */
 }

@@ -1,7 +1,7 @@
 .container--form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .form__label {
@@ -10,6 +10,10 @@
   flex-direction: column-reverse;
   margin: 0 auto 30px;
   align-items: center;
+}
+.form__label--checkbox {
+  align-items: center;
+  margin: 0 auto 30px;
 }
 
 .form__input {
