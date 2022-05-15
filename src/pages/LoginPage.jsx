@@ -37,12 +37,6 @@ export default function LoginPage() {
     // setPassword('');
   }
 
-  // function myFunction() {
-  //   const passInput = document.getElementById('loginPass');
-  //   passInput.type === 'password'
-  //     ? (passInput.type = 'text')
-  //     : (passInput.type = 'password');
-  // }
   return (
     <>
       <form className="container--form" onSubmit={handleSubmit}>
@@ -76,9 +70,6 @@ export default function LoginPage() {
             required
           />
         </label>
-        {/* <input type="checkbox" id="option">
-
-<label for="option">Select this option</label> */}
         <div className=" form__label--checkbox">
           <label>
             <input
