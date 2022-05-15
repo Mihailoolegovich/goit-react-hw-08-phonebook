@@ -16,8 +16,10 @@ export default function ContactListItem({ data }) {
   return (
     <>
       <li className="contacts__li" id={id}>
-        <p className="contacts__name">{name}: </p>
-        <p className="contacts__number">{number}</p>
+        <div className="contacts__user">
+          <p className="contacts__name">{name}: </p>
+          <p className="contacts__number">{number}</p>
+        </div>
         <button
           className="contacts__btn"
           type="button"

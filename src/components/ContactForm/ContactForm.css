@@ -5,6 +5,7 @@
 }
 
 .form__label {
+  position: relative;
   width: 200px;
   display: flex;
   flex-direction: column-reverse;
@@ -18,27 +19,39 @@
 }
 
 .form__input {
-  padding: 3px 20px 3px 20px;
+  height: 28px;
+  width: 220px;
+  padding: 1px 10px 1px 40px;
   border-radius: 7px;
   border: 1px solid #796581fc;
+}
+
+.form__input--icon {
+  position: absolute;
+  top: 14%;
+  left: -23px;
+  margin-right: 15px;
+  padding-right: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .form__btn {
   border: none;
   width: 100px;
   height: 35px;
-  background-color: #95785a;
+  background-color: #59bdd8;
   border-radius: 14px;
   color: white;
   margin: 20px auto 0;
 }
 
 .form__btn:hover {
-  background-color: #bb660f;
-  border: 1px solid #a94f10;
+  background-color: rgb(96 192 210);
+  border: 1px solid #148faf;
 }
 .form__btn:active {
-  background-color: #fd8102;
+  background-color: #597bd1db;
 }
 
 .loader {

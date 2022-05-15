@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from '../redux/auth/authOperations';
 import { useNavigate } from 'react-router-dom';
+import emailIcon from '../Icons/email.png';
+import passwordIcon from '../Icons/password.png';
+import userIcon from '../Icons/user.png';
 
 export default function RegisterPage() {
   const [name, setName] = useState('');
@@ -51,11 +54,11 @@ export default function RegisterPage() {
             type="text"
             name="name"
             value={name}
-            // placeholder="Ivan Ivanovich"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
+          <img src={userIcon} alt="user" className="form__input--icon" />
         </label>
         <label className="form__label">
           Email
@@ -64,12 +67,9 @@ export default function RegisterPage() {
             className="form__input"
             type="email"
             name="email"
-            // placeholder="xxx-xx-xx"
             value={email}
-            //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            //   title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
           />
+          <img src={emailIcon} alt="email" className="form__input--icon" />
         </label>
         <label className="form__label">
           Password
@@ -78,15 +78,17 @@ export default function RegisterPage() {
             className="form__input"
             type="password"
             name="password"
-            // placeholder="xxx-xx-xx"
             minLength="7"
             value={password}
             id="registerPass"
-            //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            //   title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            // required
+          />
+          <img
+            src={passwordIcon}
+            alt="password"
+            className="form__input--icon"
           />
         </label>
+
         <label className=" form__label--checkbox">
           <input
             style={{ margin: '10px' }}

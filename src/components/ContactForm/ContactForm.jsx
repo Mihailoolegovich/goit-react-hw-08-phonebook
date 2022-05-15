@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toastSuccess, toastInfo } from '../ToastAlert/ToastAlert';
 import './ContactForm.css';
 import { postContacts } from 'redux/contacts/contactsOperations';
+import contactIcon from '../../Icons/contact.png';
+import phoneIcon from '../../Icons/phone.png';
+
 // import { MdPermContactCalendar } from 'react-icons';
 
 export default function ContactForm() {
@@ -54,6 +57,12 @@ export default function ContactForm() {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
+        <img
+          src={contactIcon}
+          alt="email"
+          className="form__input--icon"
+          style={{ top: '20%' }}
+        />
         {/* <span>
           <svg width="18px" height="18px">
             <use href={require('../../Icons/contact.png')}></use>
@@ -71,6 +80,12 @@ export default function ContactForm() {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
+        />
+        <img
+          src={phoneIcon}
+          alt="email"
+          className="form__input--icon"
+          style={{ top: '20%' }}
         />
       </label>
       <button className="form__btn " type="submit" name="button">

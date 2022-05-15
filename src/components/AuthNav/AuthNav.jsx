@@ -5,13 +5,13 @@ export default function AutNav() {
     <div>
       <NavLink
         to="/register"
-        className={({ isActive }) => (!isActive ? 'link' : 'activeLink')}
+        className={({ isActive }) => (!isActive ? 'link' : 'link activeLink')}
       >
         Sing Up
       </NavLink>
       <NavLink
         to="/login"
-        className={({ isActive }) => (!isActive ? 'link' : 'activeLink')}
+        className={({ isActive }) => (!isActive ? 'link' : 'link activeLink')}
       >
         Log In
       </NavLink>

@@ -14,7 +14,10 @@
 }
 
 .link {
+  font-size: 20px;
   margin: 10px;
+  text-decoration: none;
+  color: #5749cb;
 }
 
 /* .link:active{
@@ -22,6 +25,6 @@
   } */
 
 .activeLink {
-  margin: 10px;
-  color: red;
+  /* margin: 10px; */
+  color: #e75c4e;
 }

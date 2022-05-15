@@ -13,7 +13,9 @@ const AppBar = () => {
           <div>
             <NavLink
               to="/"
-              className={({ isActive }) => (!isActive ? 'link' : 'activeLink')}
+              className={({ isActive }) =>
+                !isActive ? 'link' : 'link activeLink'
+              }
             >
               Home
             </NavLink>
@@ -21,7 +23,7 @@ const AppBar = () => {
               <NavLink
                 to="/contacts"
                 className={({ isActive }) =>
-                  !isActive ? 'link' : 'activeLink'
+                  !isActive ? 'link' : 'link activeLink'
                 }
               >
                 Contacts

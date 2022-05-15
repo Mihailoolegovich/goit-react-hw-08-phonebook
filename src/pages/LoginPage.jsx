@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../redux/auth/authOperations';
 import { useNavigate } from 'react-router-dom';
+import emailIcon from '../Icons/email.png';
+import passwordIcon from '../Icons/password.png';
 
 export default function LoginPage() {
   const dispatch = useDispatch();
@@ -53,6 +55,7 @@ export default function LoginPage() {
             //   title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
+          <img src={emailIcon} alt="email" className="form__input--icon" />
         </label>
         <label className="form__label">
           Password
@@ -69,6 +72,7 @@ export default function LoginPage() {
             //   title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
+          <img src={passwordIcon} alt="email" className="form__input--icon" />
         </label>
         <div className=" form__label--checkbox">
           <label>

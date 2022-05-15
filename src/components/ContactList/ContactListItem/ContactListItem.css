@@ -6,7 +6,12 @@
   min-width: 465px;
   max-width: 500px;
 }
-
+.contacts__user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+}
 .contacts__name {
   font-size: 25px;
 }
@@ -18,22 +23,21 @@
 
 .contacts__btn {
   border: none;
-  /* border: 1px solid white; */
-  width: 80px;
-  height: 35px;
-  background-color: #a122008c;
+  width: 75px;
+  height: 29px;
+  background-color: #59bdd8;
   border-radius: 14px;
   color: white;
   padding: 0 15px;
 }
 
 .contacts__btn:hover {
-  background-color: #a12200b0;
-  border: 1px solid #a94f10;
+  background-color: rgb(96 192 210);
+  border: 1px solid #148faf;
 }
 
 .contacts__btn:active {
-  background-color: #ff987c;
+  background-color: #597bd1db;
 }
 
 .loader {

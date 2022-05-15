@@ -16,8 +16,16 @@
   border: none;
   width: 70px;
   height: 25px;
-  background-color: #95785a;
+  background-color: #dfb284;
   border-radius: 14px;
   color: white;
   /* margin: 20px auto 0; */
+}
+
+.user-menu__btn:hover {
+  background-color: rgb(223 155 87);
+  border: 1px solid #95612d;
+}
+.user-menu__btn:active {
+  background-color: #597bd1db;
 }
