@@ -21,7 +21,6 @@ export default function LoginPage() {
     e.preventDefault();
     const data = { email, password };
 
-    console.log('data', data);
     dispatch(logIn(data)).then(error =>
       error.payload === 400
         ? alert('Incorrect username or password, please try again')
